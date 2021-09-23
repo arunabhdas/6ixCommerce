@@ -12,10 +12,7 @@ import com.arunabhdas.dascommerce.cart.CartActivity
 import com.arunabhdas.dascommerce.database.AppDatabase
 import com.arunabhdas.dascommerce.database.CartModel
 import com.arunabhdas.dascommerce.database.ProductFromDatabase
-import com.arunabhdas.dascommerce.fragment.AdminFragment
-import com.arunabhdas.dascommerce.fragment.HomeFragment
-import com.arunabhdas.dascommerce.fragment.JeansFragment
-import com.arunabhdas.dascommerce.fragment.MainFragment
+import com.arunabhdas.dascommerce.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main.*
 import org.jetbrains.anko.doAsync
@@ -71,7 +68,9 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                 }
                 R.id.actionShorts -> {
-                    d("daniel", "shorts was pressed!")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, ShortsFragment())
+                        .commit()
                 }
                 R.id.actionAdmin -> {
                     supportFragmentManager.beginTransaction()

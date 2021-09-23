@@ -69,9 +69,10 @@ class HomeFragment : Fragment() {
             }
         })
     }
+    /* TODO-FIXME-DEBUG
     private fun loadRecyclerView(products: List<Product>) {
         recycler_view.apply {
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(getContext(), 2)
 
             adapter = ProductsAdapter(products) { extraTitle, extraImageUrl, photoView ->
                 val intent = Intent(activity, ProductDetails::class.java)
@@ -87,5 +88,6 @@ class HomeFragment : Fragment() {
         }
         progressBar.visibility = View.GONE
     }
+    */
 
 }
